@@ -6,6 +6,8 @@ function App() {
   const [todo, setTodo] = useState("");
   const [newTodo, setNewTodo] = useState([]);
   const [searchTodo, setSearchTodo] = useState([]);
+  const [flag, setFlag] = useState(false);
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -13,7 +15,6 @@ function App() {
       return;
     }
     setNewTodo([...newTodo, todo]);
-    console.log(newTodo);
     setTodo("");
   }
 
@@ -22,14 +23,22 @@ function App() {
   }
 
   const handleDelete = (todo) => {
-    console.log(todo);
     setNewTodo(newTodo.filter((oldTodo) => oldTodo !== todo));
   }
 
   const handleSearchKeyword = (e) => {
     e.preventDefault();
-    setSearchTodo(newTodo.filter((oldTodo) => oldTodo == e.target.value));
-    console.log(searchTodo);
+    if (e.target.value == "") {
+      setSearchTodo(newTodo);
+      setFlag(false);
+      return;
+    }
+    const keyword = e.target.value;
+    const searchKeyword = keyword.trim().toLowerCase().match(/[^\s]+/g);
+    let result = newTodo.filter((todo) => todo.startsWith(searchKeyword));
+    console.log(result);
+    setSearchTodo(result);
+    setFlag(true);
   }
 
   return (
@@ -42,7 +51,7 @@ function App() {
       </form>
       <input type="text" placeholder='Search Keyword' onChange={handleSearchKeyword}></input>
 
-      <ul>{searchTodo != "" ?
+      <ul>{flag ?
         <> {searchTodo.map((todo, index) => {
           return (
             <div key={todo + index}>
