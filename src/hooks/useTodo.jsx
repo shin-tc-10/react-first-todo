@@ -19,8 +19,8 @@ const useTodo = () => {
     setTodo(e.target.value);
   }
 
-  const handleDelete = (todo) => {
-    setNewTodo(newTodo.filter((oldTodo) => oldTodo !== todo));
+  const handleDelete = (index) => {
+    setNewTodo(newTodo.filter((oldTodo) => oldTodo !== newTodo[index]));
   }
 
   const handleSearchKeyword = (e) => {
