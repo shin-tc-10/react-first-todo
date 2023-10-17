@@ -23,9 +23,12 @@ li {
 
 input {
   width: 60%;
-  margin-bottom: 5px;
+  margin: 5px;
   padding: 10px;
   background-color: rgb(176, 206, 250);
+  border: 2px solid rgb(129, 190, 236);
+  border-radius: 2px;
+  box-sizing:
 }
 
 
@@ -37,4 +40,19 @@ input {
   margin-bottom: 5px;
   padding: 10px;
   background-color: rgb(176, 206, 250);
+}
+
+
+button {
+  padding: 2px 10px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
 }
