@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const useTodo = () => {
-    const [todo, setTodo] = useState("");
+  const [todo, setTodo] = useState("");
   const [newTodo, setNewTodo] = useState([]);
   const [searchTodo, setSearchTodo] = useState([]);
   const [flag, setFlag] = useState(false);
