@@ -17,8 +17,12 @@ li {
   list-style: none;
 }
 
+h1 {
+  font-size: 2rem;
+}
+
 .search-form {
-  margin-bottom: 20px;
+  margin: 10px 0;
 }
 
 input {

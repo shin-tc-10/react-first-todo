@@ -6,15 +6,13 @@ function App() {
 
   return (
     <div className="App">
-      <h1>React Todoリスト</h1>
+      <h1>React Todo List</h1>
       <div className='search-form'>
         <form onSubmit={handleSubmit} >
           <input type="text" placeholder='New Todo' value={todo} onChange={handleTodo}></input>
         </form>
         <input type="text" placeholder='Search Keyword' onChange={handleSearchKeyword}></input>
       </div>
-      <p>今日のやること</p>
-
       <ul>
         {flag ?
           searchTodo.map((todo, index) => (
